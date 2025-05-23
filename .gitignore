@@ -1,3 +1,7 @@
+desire/
+parallel_master_v0.7
+.python-version
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
