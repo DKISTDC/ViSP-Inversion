@@ -44,31 +44,18 @@ The ViSP preprocessing pipeline relies on tools in the
 [dkist tools package](https://docs.dkist.nso.edu/projects/python-tools/en/latest/installation.html),
 as supported by the DKIST data center. 
 
-Here is a list of additional packages to install for the ViSP pre-processing pipeline. These instructions
+Here is a list of additional packages to install for the ViSP pre-processing pipeline. 
 assume you have one of the anaconda variants installed for your package management.
 
-+ conda create -n dkist
++ conda create -n dkist python=3.11
 + conda activate dkist
-+ conda install -c conda-forge dkist
-+ conda install -c conda-forge numba
-+ conda install -c conda-forge mda-xdrlib
-+ conda install -c conda-forge scikit-learn
++ pip install .
+
+This will automatically set up and configure the necessary python packages, including numpy, pandas, dkist, etc. It will also automatically include https://github.com/dkistdc/RH/python/rhanalyze
 
 You may also want to install the jupyter package, to make plots, run tests.
 
 + conda install -c conda-forge jupyter
-
-The main set of routines *ViSP_inversion.py* depends on routines in the file ViSP_tools.py.
-You will have to make this file visble to python by including the path to it in your
-*PYTHONPATH* environment variable:
-
-+ export PYTHONPATH={$HOME}/your/ViSP_package/directory
-  
-Finally, the code needs to be able to read the solar disk-center atlas as implemented in the RH code.
-To indstall you will have to download the sub-directory *python/rhanalyze" from the [RH distribution
-on GitHub: ](https://github.com/han-uitenbroek/RH) and add that to your PYTHONPATH environment variable:
-
-+ export PYTHONPATH=${PYTHONPATH}:${HOME}/your/rhanalyze/directory
 
 ## 3.0 Inversions with DeSIRe
 
